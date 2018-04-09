@@ -1,0 +1,81 @@
+.content{
+  font-size: 0.23rem;
+  width: 7.5rem;
+}
+.nav{
+  width: 100%;
+  line-height: .6rem;
+  overflow: hidden;
+  padding:0.15rem;
+  text-align: center;
+}
+.nav h4{
+  margin: 0;
+  padding: 0;
+}
+.nav .btn{
+  width: 20%;
+  border: none;
+  line-height: 0.4rem;
+  padding:0.05rem;
+  margin-top: 0.1rem;
+}
+.com{
+  width: 100%;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+.fircon{
+  width: 7.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.img {
+  width: .9rem;
+  height: .9rem;
+  margin: 0.1rem;
+  border-radius: 50%;
+}
+.con {
+  width: 100%;
+  overflow: hidden;
+  border: solid 1px #eee;
+  background: white;
+  padding: 0.2rem;
+}
+.con .img {
+  display: block;
+  float: left;
+}
+.con .right {
+  float: left;
+  padding: 0.2rem;
+}
+.con .right h5 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.con .right span {
+  color: #aaa;
+  font-size: 0.25rem;
+}
+.con .icon {
+  /*border: solid 1px #eee;*/
+  margin-top: 0.3rem;
+  line-height:0.58rem;
+}
+.con .icon a {
+  display: block;
+  width: 24%;
+  float: left;
+  text-align: center;
+  color: #aaa;
+}
+.con button{
+  border: none;
+  width: 24%;
+  line-height: 0.36rem;
+  background: white;
+  color: #aaaaaa;
+}

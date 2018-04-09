@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--
+    三元运算符，是if-else语句的简写方式，是它的语法糖
+    双向数据绑定指令： v-model  是v-on:input, 与v-bind:value的语法糖
+    默认情况下，输入框的值是字符串类型
+    特定的修饰符：
+    .number 转换成数字类型，
+    .trim  去掉字符串前后的空格
+    .lazy   将默认的input事件转换成change事件
+
+    修饰符支持连续使用
+
+-->
+<div id="demo">
+    <input type="number" v-model.number.lazy="a">
+    *
+    <input type="number" v-model.number.lazy="b">
+    =
+    {{ a * b }}
+    <br>
+    <button @click="btnClick()">点击</button>
+
+    <br>
+    <!--<input type="number" :value="a" @input="func1($event)" >-->
+    <!--*-->
+    <!--<input type="number" :value="b" @input="func2($event)">-->
+    <!--= {{a * b}}-->
+    <input type="radio" name="isMail" v-model="mail" value="true" > 男
+    <input type="radio" name="isMail" v-model="mail" value="false" > 女
+    <button @click="toggle()">切换</button>
+
+    <br>
+    <br>
+    <input type="checkbox" name="kemu" v-model="kemu" value="html"> html
+    <input type="checkbox" name="kemu" v-model="kemu" value="css"> css
+    <input type="checkbox" name="kemu" v-model="kemu" value="javascript"> javascript
+    <!-- 复选框将内部的值，存储在一个空数组中
+     单选按钮与复选框来说，如果想设置默认选中的选项，需要设置变量的默认初始值
+     -->
+    <br>
+    <br>
+    您选择 的科目是： {{kemu}}
+
+    <br>
+    <br>
+    <select name="city" v-model="city">
+        <option value="">请选择</option>
+        <option value="郑州">郑州</option>
+        <option value="开封">开封</option>
+        <option value="巩义">巩义</option>
+    </select>
+    <br>
+    您选择的城市是:{{ city }}
+</div>
+<script>
+    var vue = new Vue({
+        el:'#demo',
+        data:{
+            a:5,
+            b:3,
+            mail:true,
+            kemu:[],
+            city:''
+        },
+        methods:{
+            btnClick:function(){
+                console.log( typeof( this.a ));
+            },
+            func1:function(ev){
+                // 获取当前输入框的值
+                var input = ev.currentTarget.value;
+                console.log(input);
+                this.a = Number(input);
+            },
+            func2:function(ev){
+                var input = ev.currentTarget.value;
+                console.log(input);
+                this.b = Number(input);
+            },
+            toggle:function(){
+                this.mail = !this.mail;
+            }
+        }
+    })
+</script>
+</body>
+</html>

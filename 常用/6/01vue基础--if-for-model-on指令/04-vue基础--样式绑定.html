@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue基础--样式绑定class/style</title>
+    <script src="vue.js"></script>
+    <style>
+        .bg{
+            background:green;
+        }
+        .red{
+            color:red;
+        }
+        .font20{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+<!-- class属性的绑定 -->
+    <!-- 正常的类名添加 <p class="bg red font20">-->
+    <!--
+        添加类名的绑定方法：
+        1.以对象的形式绑定， {name:value,name:value}
+            name:指代的类名
+            value:值为布尔值，为true时，添加类名,为false时，移除类名
+        2.以数组的形式绑定, [类名，类名，类名]
+
+
+    -->
+
+    <p :class="{ 'font20':isFont20, 'red':isRed, 'bg':isBg}">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+    <p :class="classObj">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+    <p :class="['font20', redName, 'bg']">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+
+    <!-- 正常的style属性绑定 -->
+    <!--
+        v-bind:style 给标签添加动态的样式
+        两种方法
+        1.以对象的方式添加样式  { name:value,name:value }
+            name:指代的是样式属性名
+            value:绑定的是个变量，变量的值是样式属性值
+        2.以数组的样式添加样式 [变量名，变量名]
+             变量绑定的是个对象，对象的属性名是样式属性名
+             对象的属性值是样式属性值
+
+    -->
+
+
+    <p style="background:red; color:#fff; font-size:30px;">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+    <p :style="{color:redName, background:bgName}">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+    <p :style="styleObj">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+    <p :style="[redObj, bgObj]">
+        段落标签，即将添加背景颜色，字体颜色，字体大小
+    </p>
+</div>
+
+<script>
+    var vue = new Vue({
+        el:'#demo',
+        data:{
+            isFont20:true,
+            isRed:false,
+            isBg:true,
+            redName:'red',
+            bgName:'black',
+            classObj:{
+                font20:true,
+                red:true,
+                bg:true
+            },
+            styleObj:{
+                background:'green',
+                color:'#fff',
+            },
+            redObj:{
+                color:'red',
+            },
+            bgObj:{
+                background:'blue'
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue基础---事件绑定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <!-- 事件绑定指令： v-on
+        v-on:事件名称 = 执行方法
+        简写为 @事件名称 = 执行方法
+
+        事件修饰符
+        .prevent : 阻止默认事件的执行  原生写法：ev.preventDefault();
+        .stop : 阻止事件传播  原生写法：ev.stopPropagation();
+        .capture : 将事件传播顺序由冒泡改为捕获
+        .once : 控制事件执行次数，只执行一次，然后就删除掉
+        .self : 当事件在标签自身上执行时，才会触发，如果标签内部嵌套有子元素，事件并不会被触发
+     -->
+    <!--<button v-on:click="addOne()">点击</button>-->
+    <button @click.once="addOne()">点击</button>
+    <a href="http://www.baidu.com" @click="aClick($event)"> 百度页面 </a>
+    <p>
+        <a href="http://www.baidu.com" @click.prevent="addOne()"> 百度新闻 </a>
+    </p>
+
+    <form action="index.html" @submit.prevent="addOne()">
+        <input type="text" name="username"> <br>
+        <input type="submit" value="提交">
+    </form>
+
+    <main @click.capture="mainClick()">
+        <div @click.capture="divClick()">
+            <p @click.capture="pClick($event)">
+            <!--<p @click.stop="pClick($event)">-->
+                <span @click.capture="spanClick()">
+                    文字即将被点击
+                </span>
+            </p>
+        </div>
+    </main>
+
+    <main @click ="mainClick()">
+        <div @click.self ="divClick()">
+            <!--<p @click ="pClick($event)">-->
+                <!--&lt;!&ndash;<p @click.stop="pClick($event)">&ndash;&gt;-->
+                <!--<span @click ="spanClick()">-->
+                    文字即将被点击2
+                <!--</span>-->
+            <!--</p>-->
+        </div>
+    </main>
+
+
+</div>
+<script>
+    // data和methods中声明的属性或方法，可以通过vue实例来调用(即，属性和方法都是vue实例的)
+    var vue = new Vue({
+        el:'#demo',
+        // 存储的大量的属性,
+        data:{
+            num:10
+        },
+        // 方法存储在methods属性中
+        methods:{
+            addOne:function(){
+                console.log('点击了');
+//                this:当前生成的vue实例
+//                console.log(this);
+                console.log(this.num);
+                console.log( this.show() );
+            },
+            show:function(){
+                return '这是返回值'
+            },
+            aClick:function(ev){
+                ev.preventDefault();
+                console.log('页面不跳转了');
+            },
+            mainClick:function(){
+                console.log('main标签被点击了');
+            },
+            pClick:function(ev){
+                // 阻止事件的传播
+//                ev.stopPropagation();
+                console.log('p标签被点击了');
+            },
+            divClick:function(){
+                console.log('div标签被点击了');
+            },
+            spanClick:function(){
+                console.log('span标签被点击了');
+            }
+        },
+
+    })
+</script>
+</body>
+</html>

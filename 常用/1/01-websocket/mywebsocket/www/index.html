@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+    <script src="jquery.js"></script>
+    <!--  -->
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<ul class="messages">
+
+</ul>
+
+<div class="uname">
+    <div>
+        <h2>What is your nickname ?</h2>
+        <input type="text" class="unameInput" >
+    </div>
+</div>
+<div class="content">
+    <input type="text" placeholder="Typing here" class="messageInput" />
+</div>
+<script src="main.js"></script>
+<script>
+//    $.get('/ask').then(function(res){
+//        console.log(res);
+//    })
+//    console.log(this);
+    // 连接服务器，参数：服务器地址
+//    var socket = io('http://localhost:2000');
+    // 服务器端(浏览器端)发射一个自定义事件，并传递数据
+//  另一端，通过on来接收自定义事件，并执行一个回调函数，回调函数中的参数就是传递的数据
+//    socket.emit('sayHello', '你好，我已经连接上服务器了');
+//    socket.on('meto', function(data){
+//        console.log(data);
+//    })
+</script>
+</body>
+</html>

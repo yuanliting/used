@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue静态路由</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <style>
+        .v-enter{
+            opacity:0;
+            transform:translateX(100%);
+        }
+        .v-leave-to{
+            opacity:0;
+            transform:translateX(-100%);
+            position: absolute;
+        }
+        .v-enter-active, .v-leave-active{
+            transition:all 1s;
+        }
+
+    </style>
+</head>
+<body>
+<div id="demo">
+    <!-- 如果采用a标签做路径跳转，路径前要加# -->
+    <a href="#/"> 首页 </a>
+    <a href="#/about"> 关于我们 </a>
+    <!-- vue采用特定路径跳转标签
+        页面在加载时，会自动将router-link渲染成a标签，
+        to的属性值是 要跳转的路径
+    -->
+
+    <router-link to="/lianxi">联系我们 </router-link>
+
+    <!-- 所有路由视图(该路径所对应的组件模板视图)的出口：通过router-view标签，可以将跳转路由模板页面显示在当前主屏上  -->
+    <transition>
+        <router-view></router-view>
+    </transition>
+</div>
+
+<script>
+
+    /* 1. 配置路径所对应的页面模板信息 (组件内容) */
+    var routes = [
+        {
+//            path:要跳转的路径
+            path:'/about',
+//            component:当前路径所对应的显示的组件模板
+            component: {
+                template: '<h1> 组件模板的标题 </h1>'
+            }
+        },
+        {
+            path:'/lianxi',
+            component:{
+                template:'<h2>联系我们组件的内容 </h2>'
+            }
+        }
+    ]
+//    2. 创建实例化的VueRouter，并将配置好的路径参数传入进来
+    var router = new VueRouter({
+//        routers参数：路由的配置信息
+        routes:routes
+    })
+
+//  3.将创建好的路由实例，挂载在vue实例上
+    var vue = new Vue({
+        el:'#demo',
+        data:{
+
+        },
+//      router参数：挂载路由实例
+        router:router
+    })
+</script>
+</body>
+</html>

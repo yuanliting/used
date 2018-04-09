@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue基础---属性绑定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--
+    属性(开始标签中的键值对)绑定指令：v-bind
+    v-bind:属性名 = 属性值(是个变量，属性值是变量的值)
+    绑定的是一个动态的属性
+    v-bind: 指令的简写写法  :
+-->
+<div id="demo">
+    <div title="这是div的标题" v-bind:message="msg" :names="username">
+        即将绑定某个属性
+    </div>
+
+</div>
+</body>
+<script>
+    var vue = new Vue({
+        el:'#demo',
+        data:{
+            msg:'通过指令绑定的属性',
+            username:'声明过的变量'
+        }
+    })
+</script>
+</html>

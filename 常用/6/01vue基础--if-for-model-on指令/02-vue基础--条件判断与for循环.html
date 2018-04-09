@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> vue基础--条件判断与for循环 </title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--
+angular中具备大量的指令 ,ng-model, ng-show, ng-if, .... 指令以ng-开头
+vue中也具备大量的指令，指令以v-开头
+条件判断指令:
+    v-show, v-if ，赋的值是布尔值，
+    当值都为true 时，该标签是在页面中显示的
+    当值为false时，v-if绑定的标签，不存在在当前的dom树中
+                v-show绑定的标签，标签依然存在，不显示，display:none
+    v-if, v-else,
+    v-if, v-else-if, v-else-if, v-else
+    这两种条件判断绑定的标签必须连着写，否则没有效果，报错了...
+
+for循环指令：
+    v-for
+-->
+
+<div id="demo">
+    <p v-if="!isShow"> 这是显示的文字1 </p>
+    <p v-show="!isShow"> 这是显示的文字2 </p>
+    <p v-if="3 > 2"> 这是显示的文字3 </p>
+    <!--
+        score ， < 60, 不及格， 60 < score < 80 良好， 80-90:优秀，100，满分
+    -->
+    <p v-if="score < 60">
+        分数是不及格
+    </p>
+    <p v-else>
+        分数是及格了
+    </p>
+
+    <h3> 分割线 </h3>
+
+    <p v-if="score < 60">
+        分数是不及格
+    </p>
+    <p v-else-if="60 <= score && score < 80">
+        分数是良好
+    </p>
+    <!--<div>-->
+        <!--这是中文-->
+    <!--</div>-->
+    <p v-else-if="80 <= score && score < 100">
+        分数是优秀
+    </p>
+    <p v-else-if="score > 100 || score < 0">
+        分数超出范围
+    </p>
+    <p v-else>
+        分数是满分
+    </p>
+    <!--
+        v-for语法：  循环遍历获取数组或对象的属性及值
+        数组：(value, index) in 数组名称
+        对象： (value, key, index) in 对象名称
+    -->
+    <ul>
+        <li v-for=" (value, index) in arr "> {{ '第' + ( index + 1) + '个值是：' + value  }} </li>
+    </ul>
+
+    <div v-if="students.length > 0">
+        <ul>
+            <li v-for="(student,index) in students ">
+                第{{index + 1}}个学生 ：
+                <span v-for="(value, key, ins) in student">
+                    {{key}} : {{value}} --- {{ins}}
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div v-else>
+        没有学生信息显示
+    </div>
+
+
+</div>
+
+</body>
+<script>
+    var vue = new Vue({
+        el:'#demo',
+        data:{
+            isShow:true,
+            score:100,
+            arr:['大熊', '熊二', '熊大'],
+            students:[
+                { name:'熊大', age:10 },
+                { name:'熊二', age:17 },
+                { name:'熊三', age:12 }
+            ]
+
+        }
+    })
+</script>
+</html>

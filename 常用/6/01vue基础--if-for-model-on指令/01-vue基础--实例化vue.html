@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> vue基础---实例化vue </title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--
+    vue.js框架 ---- 构建单页面的web应用
+    作用类似于angular(以pc端为主), 以移动端为主
+    MVVM --- 只关注于视图层 model view viewModel  ---- Vue.js
+    vue框架没有controller
+    MVC  --- model view controller  ----- angular.js
+
+    vue实例的挂载标签，不能是html和body，常挂载在div中，以id命名
+
+    vue的数据显示---基本语法，{{ content }}
+    content:可以是变量、字符串、数字、运算符
+
+
+    模板引擎：ejs, art-template(基本语法与vue、angular一致)
+    页面中显示的变量，必须是先声明后使用
+-->
+
+<div id="demo">
+
+
+    {{username}}
+    <p>
+        3 * 5 = {{ 3 * 5}};
+    </p>
+    <p>
+        名字是:{{ '大熊' }}
+    </p>
+    <p>
+        {{ names }}
+    </p>
+
+
+
+</div>
+</body>
+<script>
+    console.log(this);
+    // 生成实例化的vue程序，在内部传入相对应的参数
+    var vue = new Vue({
+        el:'#demo', // element  必选，vue实例的挂载标签，标签所在范围，就是vue程序的使用范围，值是标签的id
+        data:{  // 该程序所有的属性值  --- 声明一个变量并赋值，在页面中可以直接调用
+            username:'lucy',
+            names:'中国'
+        },
+        methods:{ // 可选属性，放置的大量的方法
+            add:function(){
+                console.log('123456');
+            }
+        }
+    })
+</script>
+</html>

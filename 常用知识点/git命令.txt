@@ -1,0 +1,108 @@
+git 分布式版本管理系统，管理项目版本（源码托管）
+追综的是修改
+
+1. 设置本地计算机的用户名和邮箱
+   git config --global user.name '用户名'
+   git config --global user.email '邮箱账号'
+
+常用命令：
+1.mkdir         					----创建空文件夹
+2.cd fileName   					----打开文件夹
+3.pwd           					----显示当前文件所在项目
+
+
+4.git init      					----初始化git项目
+       创建一个空的git仓库，并创建一个隐藏的.git文件夹
+       通过.git管理项目版本
+   ls -ah                       	----查看隐藏文件夹
+将项目添加至版本库（暂存区）,分两步：
+5-1. git add readme.txt				----添加文件到暂存区
+		git add ./					----将当前文件夹添加至暂存区
+5-2. git commit -m "描述信息"			---- 将项目提交至仓库（添加文件的描述信息）
+		将暂存区的文件添加至本地仓库
+		
+6. git status						---- 查看仓库的状态
+
+7. git diff  						----查看修改了哪里，改了什么
+
+8. git log							----显示从最近到最远的版本提交日志
+   git log --pretty=oneline   		----格式化显示
+9. git reset --hard HEAD^			----回退到上一个版本
+
+   git reset --hard 版本号			----返回某个版本号的版本内容
+	
+10. git reflog  					----记录当前的历史命令(reset/commit)
+概念理解：
+HEAD 当前版本     HEAD^  上一个版本
+工作区：git仓库所在文件夹
+隐藏的.git文件夹  git仓库（版本库）
+
+11. git checkout -- readme.txt
+		1.撤销掉工作区内容的修改，使用暂存区的内容替代
+		2.从仓库中恢复工作区中被误删的文件
+		https://github.com/expressjs/express.git
+		
+12. git remote						---- 查看与本地仓库关联的远程仓库
+	git remote add 仓库名（分支名） 仓库路径   ----搭建远程仓库
+	git remote rm origin  删除本地仓库的关联远程库
+	
+13. git clone 仓库路径 ----将线上的仓库克隆到本地   
+
+14. git checkout -b   -----------创建并切换分支
+	git checkout 分支名 ----------切换分支
+本地仓库上传至线上： git remote ————> git push ,git pull
+远程仓库克隆到本地： git clone ————> git push ,git pull
+
+15.  git branch         --------查看所有分支
+	git branch 分支名         ---------创建子分支
+
+16.git merge 分支名          --------------将子分支合并到主分支上
+
+17. git branch -d 分支名        ------------删除子分支
+
+
+线上git托管平台：码云、github
+1.先注册平台账户
+2.生成公钥
+	步骤参考网址: http://git.mydoc.io/?t=154712
+	生成公钥：
+		ssh-keygen -t rsa -C "MoLuFengYin@qq.com" 
+	查看生成的公钥：
+		cat ~/.ssh/id_rsa.pub
+3.将公钥添加至线上平台的公钥管理中
+4.线上远程仓库与本集连接成功，可以进行推送本地仓库内容 
+将本地仓库上传到线上仓库时的操作
+5.线上创建新的仓库（空仓库--未初始化的）
+	搭建线上仓库与本地仓库之间的连接：
+	git remote add origin https://git.oschina.net/MoLuFengYin/learngit.git
+	将本地仓库的内容推送到线上仓库
+	git push -u origin master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

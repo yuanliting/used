@@ -1,0 +1,88 @@
+.content{
+  width: 7.5rem;
+  font-size: 0.3rem;
+}
+.content nav{
+  width: 7rem;
+  overflow: hidden;
+}
+.content nav .title{
+  margin: 0;
+  padding: 0;
+  width: 3.8rem;
+  float: left;
+  margin-top:0.4rem ;
+  margin-left: 2.2rem;
+  font-size: 0.32rem;
+}
+.content nav .submit{
+  display: block;
+  width: 1rem;
+  line-height: 0.5rem;
+  border: none;
+  background: white;
+  margin-top: 0.33rem;
+
+  font-size: 0.3rem;
+  color: blue;
+}
+.con{
+  width: 100%;
+  margin-top: 0.3rem;
+}
+.con .tip{
+  line-height: 0.7rem;
+  background: rgba(164, 187, 185, 0.5);
+  font-size: 0.28rem;
+  padding-left: 0.23rem;
+}
+.select{
+  margin-left: 0.23rem;
+  font-size: 0.34rem;
+  margin-top: 0.2rem;
+  position: relative;
+}
+
+.select .sel{
+  border: none;
+  width: 6rem;
+  margin-left: 0.2rem;
+  height: 0.5rem;
+  background: white;
+}
+.side{
+  border-bottom: solid 1px #cccccc ;
+  position:relative;
+  z-index: 99;
+}
+.hidden{
+  width: 0.5rem;
+  height: 2.6rem;
+  position: absolute;
+  top: -2.2rem;
+  right: 0.2rem;
+  background: white;
+}
+.flow{
+  width: 7.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.foote{
+  width: 7.5rem;
+  text-align: center;
+  font-size: 0.32rem;
+  line-height: 0.92rem;
+  margin-top: 0.3rem;
+
+
+}
+.error{
+  margin: 0;
+  position: relative;
+  top:-1.5rem;
+  text-align: center;
+  color: red;
+  z-index: 99;
+}
+

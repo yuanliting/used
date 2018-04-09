@@ -1,0 +1,17 @@
+
+http协议：超文本传输协议，浏览器端(客户端)主动向服务器端发送请求，然后获取服务器端返回的响应数据
+    服务器端接收并处理请求，返回响应数据信息
+ 不能实现服务器端主动向浏览器发送请求
+
+ websocket，可以使服务器端主动向浏览器端发送请求，反之亦然
+ 可以实现双向通信
+ 例子：即时通信、电话、群聊等...
+
+ socket.io模块：创建socket服务器，实现双向通信，基于tcp协议
+tcp协议：传输层的协议
+http协议：应用层的协议
+
+安装express, socket.io模块
+npm install express --save
+npm install socket.io --save
+

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        body{
+            margin:0;
+        }
+        button{
+            width:100%;
+            line-height:35px;
+        }
+        ul{
+            background:red; color:#fff; margin:0;
+        }
+        ul li{
+            line-height:35px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <!--<section v-for="friend in friends">-->
+        <!--<button> {{ friend.title }} </button>-->
+        <!--<ul>-->
+            <!--<li v-for="list in friend.lists"> {{ list }} </li>-->
+        <!--</ul>-->
+    <!--</section>-->
+    <!--
+    组件调用了三次
+    ins: 当前组件的索引值
+    friend:当前分类的列表
+    key: 避免标签重用
+    clickindex: 按钮点击时，根实例传递到组件中的索引值
+    open:父组件在使用子组件的地方监听自定义事件，并执行回调函数
+    -->
+    <my-com v-for="(friend, ins) in friends" @open="setIndex"  :ins="ins" :friend="friend" :key="ins" :clickindex="num">
+
+    </my-com>
+</div>
+
+<script id="com1" type="text/html">
+    <div>
+        <button @click="btnClick(ins)"> {{ friendC.title }} </button>
+        <ul v-if="ins == clickindex" ref="mm" :data-key="ins">
+            <li v-for=" list in friendC.lists "> {{ list }} </li>
+        </ul>
+    </div>
+</script>
+
+<script>
+
+    Vue.component('my-com', {
+        template:'#com1',
+//      设置属性接收传值的初始值
+        data:function(){
+            return {
+                friendC:this.friend,
+                index:this.ins,
+                indexClick:this.clickindex,
+                resultA:this.index == this.clickindex
+            }
+        },
+//        接收父组件传递过来的值
+        props:['friend', 'ins', 'clickindex'],
+        methods:{
+            btnClick:function(){
+//      组件调用三次，是三个独立的作用域，所以，条件判断时，判断是当前ul的索引值，是否等于点击的索引值 ，点击的当前组件，需要向其他组件传递参数，使用的是组件传值，将值传递到根实例中
+//                触发一个自定义事件，并将索引值传递出去
+
+                   if( this.clickindex == this.ins ){
+                       this.$emit('open', null);
+                   }else {
+                       this.$emit('open', this.ins);
+                   }
+
+            }
+        },
+        computed:{
+            result:function (){
+                return this.index == this.clickindex;
+            }
+        }
+    })
+
+    var vue = new Vue({
+        el:'#demo',
+        data:{
+            friends:[
+                {
+                    title:'朋友',
+                    lists:['张三', '李四', '王五']
+                },
+                {
+                    title:'家人',
+                    lists:['张三', '李四', '王五', '小白']
+                },
+                {
+                    title:'同事',
+                    lists:['张三', '李四']
+                }
+            ],
+            num:10
+        },
+        methods:{
+            setIndex:function(index){
+//                index:监听自定义事件时传递过来的参数
+//                console.log(index);
+                this.num = index;
+            }
+        }
+    })
+
+
+
+    // Object.defineProperty()
+
+</script>
+</body>
+</html>

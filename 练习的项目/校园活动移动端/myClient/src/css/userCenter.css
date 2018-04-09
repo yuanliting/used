@@ -1,0 +1,70 @@
+.content {
+  width: 7.5rem;
+  background: #eee;
+  font-size: 0.32rem;
+}
+.table {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0.15rem 0.18rem;
+  background: white;
+}
+
+.left {
+  float: left;
+  line-height: 0.7rem;
+  width:0.8rem;
+}
+.img {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  float: right;
+}
+.fir {
+  margin: 0;
+  margin-bottom:0.4rem;
+  line-height: 0.4rem;
+}
+.auto {
+  background: white;
+  padding: 0.2rem;
+  border: solid 1px #eee;
+  color: #aaa;
+  font-size: 0.24rem;
+}
+.name {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: solid 1px #eee;
+  padding: 0.15rem;
+}
+.name p {
+  float: left;
+  line-height:0.4rem;
+  margin: 0;
+}
+.name .right {
+  float: right;
+  line-height: 0.4rem;
+  border: none;
+  text-align: center;
+}
+.basic {
+  margin: 0;
+}
+.submit {
+  width: 100%;
+  display: block;
+  line-height:0.4rem;
+  margin-bottom: 0.42rem;
+  border: none;
+  background: blue;
+  color: white;
+  /*padding: 10px;*/
+  font-size: 0.32rem;
+  line-height: 0.8rem;
+  border-radius:0.4rem;
+}

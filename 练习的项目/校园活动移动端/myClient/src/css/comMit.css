@@ -1,0 +1,116 @@
+.content{
+  background: #eee;
+  font-size: 0.23rem;
+}
+.fircon {
+  width: 100%;
+  margin:0.6rem auto;
+}
+.img {
+  width: 0.9rem;
+  height:0.9rem;
+  margin: 0.15rem;
+  border-radius: 50%;
+}
+.con {
+  width: 100%;
+  overflow: hidden;
+  border: solid 1px #eee;
+  /* margin: 10px; */
+  background: white;
+  padding: 0.2rem;
+  font-size: 0.23rem;
+}
+.con .img {
+  display: block;
+  float: left;
+}
+.con .right {
+  float: left;
+  padding: 0.2rem;
+  width: 80%;
+  /*  */
+}
+.con .right h5 {
+  /* width: 40px; */
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.con .right span {
+  color: #aaa;
+  font-size: .23rem;
+}
+.con .icon {
+  /*border: solid 1px #eee;*/
+  line-height: 0.6rem;
+}
+.con .icon a {
+  display: block;
+  width: 24%;
+  float: left;
+  text-align: center;
+  color: #aaa;
+}
+.pl{
+  line-height:0.4rem;
+  border-bottom: solid 1px #eee;
+  padding: 0.2rem;
+  font-size: 0.23rem;
+}
+.input{
+
+  margin: 0.2rem 0;
+  padding: 0.15rem;
+  text-align: center;
+  background: white;
+  line-height: 0.6rem;
+}
+.contnt{
+  line-height: 0.4rem;
+
+}
+.btn{
+  border: none;
+  display: block;
+  line-height: 0.6rem;
+  width: 100%;
+  border-radius: 0.2rem;
+  margin: 0.1rem;
+  background: darkcyan;
+  color: white;
+}
+.com{
+  padding: 0.23rem  0.2rem;
+}
+.cont{
+  margin: 0.2rem;
+}
+.icon button {
+  /* display: block; */
+  border: none;
+  width: 24%;
+  line-height: 0.4rem;
+  background: white;
+  color: #aaaaaa;
+
+}
+.icon2{
+  /* width: 10px; */
+  float: right;
+  margin-right:-0.7rem;
+  color: darkcyan;
+  cursor: pointer;
+
+}
+.btnRe{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  border: none;
+  color: white;
+  line-height: 0.6rem;
+  background: darkcyan;
+  border-radius: 0.23rem;
+  /* text-align: center; */
+}

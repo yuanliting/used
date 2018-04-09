@@ -1,0 +1,77 @@
+
+.content{
+  width: 7.5rem;
+  font-size: 0.32rem;
+}
+.logo{
+  height: 3.8rem;
+  width: 7.5rem;
+  margin: 0 auto;
+  background: deepskyblue;
+}
+.logo .g-logo{
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 0.40rem;
+  border: solid 2px white;
+  margin-top: 0.9rem;
+  margin-left: 2.8rem;
+}
+.form{
+  margin: 0.2rem;
+  /*font-size: 0.4rem;*/
+}
+
+.foot{
+  position: fixed;
+  /*bottom:0.5rem;*/
+  background: white;
+}
+.input-con{
+  font-size: 0.3rem;
+  /*border: none;*/
+  border-bottom: solid 1px #e0e0e0;
+  line-height: 0.5rem;
+}
+
+.btn{
+  width: 5.3rem;
+  line-height: 0.6rem;
+  border: none;
+  background: dodgerblue;
+  border-radius: 0.3rem;
+  margin: 0.3rem;
+  margin-top: 0.45rem;
+  margin-left: 0.85rem;
+  /*display: block;*/
+  font-size:0.3rem;
+  color: white;
+  padding: .1rem;
+}
+.thir{
+  font-size: 0.27rem;
+  margin: 0.2rem;
+  margin-left: 2.3rem;
+}
+.thir  a.fir{
+  color: blue;
+}
+.thir a{
+  color: black;
+}
+.vb{
+  margin-top: 1rem;
+  font-size: 0.28rem;
+
+}
+.error{
+  margin: 0;
+  position: relative;
+  top:0.6rem;
+  text-align: center;
+  color: red;
+  z-index: 99;
+}
+.con P{
+  background:#F7F7FA !important ;
+}

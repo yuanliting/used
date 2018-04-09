@@ -1,0 +1,59 @@
+.content {
+  width: 7.5rem;
+  font-size: 0.3rem;
+}
+.total{
+  width: 80%;
+  margin: 0.3rem auto;
+}
+nav {
+  width: 100%;
+  overflow: hidden;
+}
+nav h5 {
+  text-align: center;
+  width: 100%;
+  float: left;
+  font-size: 0.32rem;
+}
+
+.con-total p {
+  width: 100%;
+  background: darkseagreen;
+  line-height: 0.7rem;
+  padding: 0 .8rem;
+  border-radius:0.5rem;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+.foote {
+  width: 100%;
+  font-size: 0.24rem;
+  text-align: center;
+  position: relative;
+  top:2rem;
+}
+.input-tip{
+  margin-top: 0.2rem;
+}
+
+.error{
+  margin: 0;
+  position: relative;
+  top:1.5rem;
+  text-align: center;
+  color: red;
+  z-index: 99;
+}
+.flow{
+  border-bottom: solid 1px #cccccc;
+  margin-top: 0.2rem;
+}
+.submit{
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  line-height: 0.7rem;
+  border: none;
+  margin-top: 0.7rem;
+}
